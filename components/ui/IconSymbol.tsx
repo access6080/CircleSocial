@@ -14,7 +14,9 @@ const MAPPING = {
   'person.2.fill': 'people',
   'camera.fill' : 'photo-camera',
   'person.fill' : 'person',
-  'square.and.pencil.circle': "person-pin-circle"
+  'square.and.pencil.circle': "person-pin-circle",
+  'magnifyingglass': 'search',
+  'message': 'chat-bubble'
 } as Partial<
   Record<
     import('expo-symbols').SymbolViewProps['name'],

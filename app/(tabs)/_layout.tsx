@@ -13,7 +13,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].text,
         headerShown: false,
         tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
@@ -27,8 +27,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Circles',
+          tabBarIcon: ({ color, focused }: { color: string, focused: boolean }) => <IconSymbol size={28} name={focused ? "message.fill" : "message"} color={color} />,
         }}
       />
       <Tabs.Screen
@@ -42,7 +42,7 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: 'Profile',
-          tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="person.fill" color={color} />,
+          tabBarIcon: ({ color, focused }: { color: string, focused: boolean }) => <IconSymbol size={28} name={focused ? "person.fill" : 'person'} color={color} />,
         }}
       />
     </Tabs>

@@ -9,8 +9,18 @@ const Header = () => {
   return (
     <View style={styles.container}>
         {/* <Image source={require("@/assets/images/header_icon.png")} style={styles.image}/> */}
-        <Text style={[styles.icon_text, { color: Colors[colorScheme ?? 'light'].text}]}>circle</Text>
-      
+            <Pressable
+                style={[
+                    { flex: 1, marginHorizontal: 10, paddingVertical: 8, paddingHorizontal: 12, borderRadius: 8, justifyContent: 'flex-start' },
+                    { backgroundColor: Colors[colorScheme ?? "light"].card, flexDirection: "row"}
+                ]}
+                // onPress={() => navigation.navigate("Search")}
+            >
+                <IconSymbol name='magnifyingglass' color={Colors[colorScheme ?? "light"].text} size={20}/>
+                <Text style={{ color: Colors[colorScheme ?? "light"].text, fontSize: 16, marginHorizontal: 5 }}>
+                    Search...
+                </Text>
+            </Pressable>
         <View style={styles.buttonContainer}>
             <Pressable>
                 <IconSymbol  name='square.and.pencil' color={Colors[colorScheme ?? "light"].text} size={30}/>

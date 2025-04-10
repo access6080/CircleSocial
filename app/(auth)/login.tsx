@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, Alert } from 'react-native';
+import { StyleSheet, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, Alert, View, Text} from 'react-native';
 import { useRouter } from 'expo-router';
 import * as SecureStore from 'expo-secure-store';
 
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+
 import { useThemeColor } from '@/hooks/useThemeColor';
 
 export default function LoginScreen() {
@@ -49,9 +48,9 @@ export default function LoginScreen() {
       style={styles.container} 
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
-      <ThemedView style={styles.innerContainer}>
-        <ThemedText style={styles.title}>Circle Social</ThemedText>
-        <ThemedText style={styles.subtitle}>Login to your account</ThemedText>
+      <View style={styles.innerContainer}>
+        <Text style={styles.title}>Circle Social</Text>
+        <Text style={styles.subtitle}>Login to your account</Text>
         
         <TextInput
           style={[styles.input, { color: textColor, backgroundColor: backgroundColor, borderColor: placeholderColor }]}
@@ -77,18 +76,18 @@ export default function LoginScreen() {
           onPress={handleLogin}
           disabled={isLoading}
         >
-          <ThemedText style={styles.buttonText}>
+          <Text style={styles.buttonText}>
             {isLoading ? 'Logging in...' : 'Login'}
-          </ThemedText>
+          </Text>
         </TouchableOpacity>
         
         <TouchableOpacity 
           style={styles.linkContainer}
           onPress={() => router.push('/(auth)/signup')}
         >
-          <ThemedText style={styles.link}>Don't have an account? Sign Up</ThemedText>
+          <Text style={styles.link}>Don't have an account? Sign Up</Text>
         </TouchableOpacity>
-      </ThemedView>
+      </View>
     </KeyboardAvoidingView>
   );
 }

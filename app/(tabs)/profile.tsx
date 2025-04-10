@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, TouchableOpacity, Alert, Text, View} from 'react-native';
 import * as SecureStore from 'expo-secure-store';
 
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
 import { useAuth } from '@/hooks/useAuth';
 import { useThemeColor } from '@/hooks/useThemeColor';
 
@@ -46,38 +44,38 @@ export default function ProfileScreen() {
   };
 
   return (
-    <ThemedView style={styles.container}>
-      <ThemedView style={styles.profileHeader}>
-        <ThemedView style={styles.profileImage}>
-          <ThemedText style={styles.profileInitial}>
+    <View style={styles.container}>
+      <View style={styles.profileHeader}>
+        <View style={styles.profileImage}>
+          <Text style={styles.profileInitial}>
             {userName.charAt(0).toUpperCase()}
-          </ThemedText>
-        </ThemedView>
+          </Text>
+        </View>
         
-        <ThemedText style={styles.userName}>{userName}</ThemedText>
-      </ThemedView>
+        <Text style={styles.userName}>{userName}</Text>
+      </View>
       
-      <ThemedView style={styles.infoSection}>
-        <ThemedText style={styles.sectionTitle}>Account Info</ThemedText>
+      <View style={styles.infoSection}>
+        <Text style={styles.sectionTitle}>Account Info</Text>
         
-        <ThemedView style={styles.infoItem}>
-          <ThemedText style={styles.infoLabel}>Display Name</ThemedText>
-          <ThemedText style={styles.infoValue}>{userName}</ThemedText>
-        </ThemedView>
+        <View style={styles.infoItem}>
+          <Text style={styles.infoLabel}>Display Name</Text>
+          <Text style={styles.infoValue}>{userName}</Text>
+        </View>
         
-        <ThemedView style={styles.infoItem}>
-          <ThemedText style={styles.infoLabel}>Account Type</ThemedText>
-          <ThemedText style={styles.infoValue}>Standard</ThemedText>
-        </ThemedView>
-      </ThemedView>
+        <View style={styles.infoItem}>
+          <Text style={styles.infoLabel}>Account Type</Text>
+          <Text style={styles.infoValue}>Standard</Text>
+        </View>
+      </View>
       
       <TouchableOpacity
         style={[styles.signOutButton, { backgroundColor: primaryColor }]}
         onPress={handleSignOut}
       >
-        <ThemedText style={styles.signOutButtonText}>Sign Out</ThemedText>
+        <Text style={styles.signOutButtonText}>Sign Out</Text>
       </TouchableOpacity>
-    </ThemedView>
+    </View>
   );
 }
 
