@@ -14,6 +14,9 @@ type MessageListProps = {
   messages: Message[];
 };
 
+// List is inverted so messages array should be in from newest (top) to oldest (bottom)
+// the first element of messages should be the newest message
+
 const MessageList = ({ messages }: MessageListProps) => {
   const insets = useSafeAreaInsets();
   
@@ -30,9 +33,9 @@ const MessageList = ({ messages }: MessageListProps) => {
       )}
       contentContainerStyle={[
         styles.listContent,
-        { paddingTop: insets.top + 15, paddingBottom: 10 }
+        { paddingTop: 10, paddingBottom: insets.top + 15 }
       ]}
-      inverted={false} // Set to true to reverse the list (newest at bottom)
+      inverted={true} // Set to true to reverse the list (newest at bottom)
       style={styles.list}
       showsVerticalScrollIndicator={true}
     />

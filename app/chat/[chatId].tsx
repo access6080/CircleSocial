@@ -127,7 +127,7 @@ export default function ChatScreen() {
       isSent: true,
     };
     
-    setMessages(prevMessages => [...prevMessages, newMessage]);
+    setMessages(prevMessages => [newMessage, ...prevMessages,]);
     
     // In a real app, you'd send the message to your backend here
   };
