@@ -32,13 +32,6 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="updates"
-        options={{
-          title: 'Updates',
-          tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="camera.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
         name="profile"
         options={{
           title: 'Profile',

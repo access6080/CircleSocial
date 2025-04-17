@@ -15,7 +15,7 @@ const Header = () => {
         {/* <Image source={require("@/assets/images/header_icon.png")} style={styles.image}/> */}
             <Pressable
                 style={[
-                    { flex: 1, marginHorizontal: 10, paddingVertical: 8, paddingHorizontal: 12, borderRadius: 8, justifyContent: 'flex-start' },
+                    { flex: 1, marginRight: 20, paddingVertical: 8, paddingHorizontal: 12, borderRadius: 8, justifyContent: 'flex-start' },
                     { backgroundColor: Colors[colorScheme ?? "light"].card, flexDirection: "row"}
                 ]}
                 onPress={() => router.push('/search')}
@@ -28,11 +28,7 @@ const Header = () => {
         <View style={styles.buttonContainer}>
             {/* Create Message/Circle Button */}
             <Pressable onPress={() => setCreateMessageModalVisible(true)}>
-                <IconSymbol name='square.and.pencil' color={Colors[colorScheme ?? "light"].text} size={30}/>
-            </Pressable>
-             {/* Create Update Button */}
-            <Pressable>
-                <IconSymbol name='camera.fill' color={Colors[colorScheme ?? "light"].text} size={35}/>
+                <IconSymbol name='square.and.pencil' color={Colors[colorScheme ?? "light"].text} size={35}/>
             </Pressable>
         </View>
         
@@ -52,16 +48,17 @@ const styles = StyleSheet.create({
         resizeMode: "contain"
     },
     container: {
-        justifyContent: "space-between",
         padding: 10,
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
+        justifyContent: "space-evenly",
     }, 
     buttonContainer: {
+        flex: 0.2,
         flexDirection: "row",
-        justifyContent: "space-around",
+        justifyContent: "center",
         alignItems: 'center',
-        width: 100
+        height: '100%'
     }, 
     icon_text: {
         fontSize: 30,

@@ -34,7 +34,7 @@ const ChatInput = ({ onSend }: ChatInputProps) => {
       <View style={[
         styles.inputContainer,
       ]}>
-        <View style={styles.attachButtonContainer}>
+        {/* <View style={styles.attachButtonContainer}>
           <Pressable style={styles.attachButton}>
             <IconSymbol 
               name="camera.fill" 
@@ -42,7 +42,7 @@ const ChatInput = ({ onSend }: ChatInputProps) => {
               color={Colors[colorScheme ?? 'light'].text} 
             />
           </Pressable>
-        </View>
+        </View> */}
         
         <View style={[
           styles.textInputWrapper,
