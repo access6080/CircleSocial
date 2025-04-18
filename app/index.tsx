@@ -1,17 +1,18 @@
 import React from 'react';
 import Header from '@/components/header';
 import Messages from '@/components/messages';
-import UpdateSection from '@/components/updates_section';
-import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import PinnedChat from '@/components/pinned_chat';
 
 export default function HomeScreen() {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top']}>
       <Header />
       
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollContent}>
-        {/* Updates Section */}
-        <UpdateSection />
+        {/* Pinned Chat Section */}
+        <PinnedChat />
         {/* Recent Messages */}
         <Messages />
       </ScrollView>

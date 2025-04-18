@@ -4,7 +4,7 @@ import { Colors } from '../constants/Colors'
 import { useColorScheme } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 
-interface StoryCircleProps {
+interface PinnedChatProps {
   imageUri: string
   size?: number
   name?: string
@@ -13,14 +13,14 @@ interface StoryCircleProps {
   borderWidth?: number
 }
 
-const StoryCircle = ({
+const PinnedChatCircle = ({
   imageUri,
   size = 70,
   name,
   seen = false,
   onPress,
   borderWidth = 3
-}: StoryCircleProps) => {
+}: PinnedChatProps) => {
   const colorScheme = useColorScheme() || 'light'
   const tintColor = Colors[colorScheme].tint
   const innerPadding = 2 // Space between the border and image
@@ -115,4 +115,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default StoryCircle;
+export default PinnedChatCircle;

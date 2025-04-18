@@ -30,6 +30,10 @@ const Header = () => {
             <Pressable onPress={() => setCreateMessageModalVisible(true)}>
                 <IconSymbol name='square.and.pencil' color={Colors[colorScheme ?? "light"].text} size={35}/>
             </Pressable>
+            {/* Profile Button */}
+            <Pressable style={styles.profile}>
+                <IconSymbol name='person.fill' size={25} color={'#FFF'}/>
+            </Pressable>
         </View>
         
         {/* Create Message Modal */}
@@ -54,15 +58,21 @@ const styles = StyleSheet.create({
         justifyContent: "space-evenly",
     }, 
     buttonContainer: {
-        flex: 0.2,
         flexDirection: "row",
-        justifyContent: "center",
+        justifyContent: "space-evenly",
         alignItems: 'center',
-        height: '100%'
+        height: '100%',
+        width: 100
     }, 
     icon_text: {
         fontSize: 30,
         fontFamily: "Monoton",
+    },
+    profile: {
+        backgroundColor: '#CCC',
+        padding: 5,
+        borderRadius: '50%',
+        marginLeft: 15
     }
 })
 
